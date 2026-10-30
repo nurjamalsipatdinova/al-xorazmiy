@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computer Science Foundation — Test</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#172033;--mu:#667085;--bd:#dfe4ee;--pr:#3b5bdb;--prt:#fff;--ok:#12805c;--okb:#e3f6ee;--no:#c0392b;--nob:#fdeaea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141f;--card:#192033;--tx:#e8ecf5;--mu:#97a3ba;--bd:#2b3550;--pr:#7c96ff;--prt:#10141f;--ok:#4cd6a0;--okb:#12352a;--no:#ff8a7a;--nob:#3b1d1d}}
+:root[data-theme="dark"]{--bg:#10141f;--card:#192033;--tx:#e8ecf5;--mu:#97a3ba;--bd:#2b3550;--pr:#7c96ff;--prt:#10141f;--ok:#4cd6a0;--okb:#12352a;--no:#ff8a7a;--nob:#3b1d1d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.w{max-width:720px;margin:0 auto;padding:16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.lang{display:flex;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:3px}
+.lang button{border:0;background:none;color:var(--mu);padding:6px 12px;border-radius:8px;font-weight:600;cursor:pointer}
+.lang button.on{background:var(--pr);color:var(--prt)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;margin-bottom:12px}
+h1{font-size:22px;margin:0 0 6px}h2{font-size:18px;margin:0 0 12px}p{margin:0 0 12px;color:var(--mu)}
+label{display:block;font-weight:600;margin:12px 0 4px;font-size:14px}
+input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+.btn{display:inline-block;border:0;background:var(--pr);color:var(--prt);padding:13px 22px;border-radius:12px;font:600 16px inherit;cursor:pointer;margin-top:16px}
+.btn.s{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}.btn:disabled{opacity:.4;cursor:default}
+.bar{height:8px;background:var(--bd);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--pr);transition:width .3s}
+.meta{display:flex;justify-content:space-between;font-weight:600;margin-bottom:8px}.tm{font-variant-numeric:tabular-nums}.tm.lo{color:var(--no)}
+.q{font-size:18px;font-weight:600;margin:16px 0}
+.o{display:flex;gap:10px;width:100%;text-align:left;background:var(--card);color:var(--tx);border:2px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:8px;font:inherit;cursor:pointer}
+.o b{min-width:26px;height:26px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:13px;flex:none}
+.o:hover:not(:disabled){border-color:var(--pr)}.o:disabled{cursor:default}
+.o.ok{border-color:var(--ok);background:var(--okb)}.o.no{border-color:var(--no);background:var(--nob)}
+.fb{padding:10px 12px;border-radius:10px;margin-top:8px;font-weight:600}.fb.ok{background:var(--okb);color:var(--ok)}.fb.no{background:var(--nob);color:var(--no)}
+.big{font-size:56px;font-weight:800;line-height:1;margin:8px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.grid div{background:var(--bg);border-radius:10px;padding:10px;text-align:center;font-size:13px;color:var(--mu)}.grid b{display:block;font-size:18px;color:var(--tx)}
+.rv{border-top:1px solid var(--bd);padding:12px 0;font-size:15px}.rv .a{color:var(--no)}.rv .c{color:var(--ok)}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+</style></head><body><div class="w"><div class="top"><b>Computer Science Foundation</b><div class="lang" id="lg"></div></div><div id="app"></div></div>
+<script>
+const ANS="BCAABBCDABCADBCADBCADBCADBACDA",MIN=20;
+const RAW={uz:`Protsessorning tezligini ifodalovchi takt chastotasi qaysi birlikda o’lchanadi?|GB|GHz|dpi|Mbit/s
+Kompyuterning ishlash tamoyilida ma’lumotlar qaysi ketma-ketlikda ishlanadi?|Chiqarish → Kiritish → Qayta ishlash|Qayta ishlash → Chiqarish → Kiritish|Kiritish → Qayta ishlash → Chiqarish|Saqlash → Chiqarish → Kiritish
+Ishlayotgan dasturning joriy ma’lumotlari vaqtincha qaysi qurilmada saqlanadi?|Tezkor xotira (RAM)|HDD|Monitor|Skaner
+Quyidagilardan qaysi biri operatsion tizim hisoblanmaydi?|Google Chrome|Linux|macOS|iOS
+Windowsda ish stoli (Desktop) nima?|Faqat fayllarni chop etish uchun mo’ljallangan dastur|Tizim yoqilgandan keyin ko’rinadigan asosiy ish maydoni, unda yorliqlar va vazifalar paneli joylashadi|Faqat internet brauzeri|Kompyuterning tezkor xotirasi
+Windowsdagi Start menyusining asosiy vazifasi nima?|Faqat faylni chop etish|Dasturlar, sozlamalar va qidiruvga tezkor kirishni ta’minlash|Internet tezligini oshirish|Viruslarni o’chirish
+2 GB necha MB ga teng (1 GB = 1024 MB hisobida)?|1000 MB|2000 MB|2048 MB|4096 MB
+Qaysi fayl kengaytmasi odatda bajariladigan dasturni bildiradi?|.jpg|.docx|.mp3|.exe
+Faylni bir papkadan boshqasiga ko’chirish (nusxasi qolmaydigan qilib) uchun qaysi tugmalar ketma-ketligi ishlatiladi?|Ctrl+X, so’ng Ctrl+V|Ctrl+C, so’ng Ctrl+Z|Ctrl+Z, so’ng Ctrl+V|F2, so’ng Delete
+Windowsda Delete tugmasi bilan o’chirilgan fayl odatda qayerga tushadi va tiklash mumkinmi?|Butunlay yo’qoladi, tiklab bo’lmaydi|Savatga (Recycle Bin) tushadi, tiklash mumkin|Fleshkaga ko’chadi|Ish stoliga ko’chadi
+Skaner qaysi turdagi qurilma hisoblanadi?|Chiqarish qurilmasi|Saqlash qurilmasi|Kiritish qurilmasi|Ovoz qurilmasi
+Quyidagi qurilmalarning qaysi juftligi faqat chiqarish qurilmalaridan iborat?|Printer va proyektor|Klaviatura va sichqoncha|Veb-kamera va skaner|Monitor va klaviatura
+Tizim blokida kompyuterning barcha asosiy qurilmalarini o’zaro bog’lovchi qism qaysi?|Protsessor|RAM|HDD|Ona plata
+SSD ning HDD dan asosiy afzalligi nima?|Faqat o’qish uchun mo’ljallangan|Harakatlanuvchi mexanik qismlari yo’q, shuning uchun tezroq ishlaydi|Elektr tokisiz ishlaydi|Ma’lumotni saqlamaydi
+Quyidagi qatorlarning qaysi biri faqat brauzerlardan iborat?|Chrome, Word, Safari|Edge, Excel, Firefox|Chrome, Edge, Firefox|Firefox, Paint, Safari
+Qidiruv tizimida so’zlarni aynan berilgan tartibda qidirish uchun nima ishlatiladi?|Qo’shtirnoq " "|Yulduzcha *|Panjara #|Qavs ( )
+Trojan dasturi qanday ishlaydi?|Faqat kompyuter tezligini oshiradi|Fayllarni arxivlaydi|Antivirusni yangilaydi|O’zini foydali dastur qilib ko’rsatib, kompyuterga zarar yetkazadi
+Ransomware qanday zarar yetkazadi?|Faqat ekran yorqinligini kamaytiradi|Fayllarni shifrlab, ochish uchun to’lov talab qiladi|Klaviaturani o’chiradi|Faqat internetni tezlashtiradi
+2FA (ikki bosqichli autentifikatsiya) qanday himoya beradi?|Parolni avtomatik o’zgartiradi|Fayllarni arxivlaydi|Parol to’g’ri bo’lsa ham, qo’shimcha tasdiq (masalan, SMS kod) talab qiladi|Antivirus o’rnini bosadi
+Touch typing (10 barmoqda yozish) usulining asosiy qoidasi qaysi?|Klaviaturaga qaramasdan, barcha barmoqlar bilan yozish|Faqat o’ng qo’l bilan yozish|Faqat ikki barmoq bilan yozish|Sichqoncha bilan yozish
+Matn terishda Backspace tugmasi nima qiladi?|Matnni saqlaydi|Yangi qator ochadi|Matnni chop etadi|Kursordan chap tomondagi belgini o’chiradi
+"Raqamli iz" (digital footprint) deb nimaga aytiladi?|Klaviaturadagi barmoq izlariga|Foydalanuvchining internetda qoldirgan faoliyat izlariga|Faqat o’chirilgan fayllarga|Faqat antivirus hisobotlariga
+Axborotning ishonchliligini aniqlashning eng to’g’ri usuli qaysi?|Eng ko’p layk olgan postga ishonish|Faqat sarlavhani o’qish|Bir nechta ishonchli manbada tekshirib ko’rish|Do’st yuborgan xabarga so’zsiz ishonish
+Raqamli transformatsiyaning mohiyati nima?|Jarayonlarni raqamli texnologiyalar asosida qayta tashkil etish|Faqat yangi kompyuter sotib olish|Hujjatlarni qog’ozga ko’chirish|Internetni o’chirib qo’yish
+Elektron hujjat aylanishining asosiy afzalligi nima?|Hujjatlar faqat bitta nusxada bo’ladi|Hujjatlarni faqat qog’ozda saqlash mumkin|Internet talab qilinmaydi|Hujjatlar tez almashinadi, vaqt va xarajat tejaladi
+DNS ning vazifasi nima?|Viruslarni aniqlash|Domen nomini IP-manzilga aylantirish|Parollarni saqlash|Fayllarni siqish
+Hosting nima?|Veb-sayt fayllari saqlanadigan serverda joy ajratish xizmati|Brauzer turi|Antivirus dasturi|Elektron pochta xizmati
+HTTPS protokoli HTTP dan nimasi bilan farq qiladi?|Faqat rasmlarni ochadi|Internetsiz ishlaydi|Ma’lumotlarni shifrlab, xavfsiz uzatadi|Faqat pochta uchun ishlatiladi
+Bulutdagi hujjatni boshqalar faqat ko’ra olishi, o’zgartira olmasligi uchun qaysi ruxsat beriladi?|Egasi (Owner)|Tahrirlovchi (Editor)|Ruxsat berilmaydi|Ko’ruvchi (Viewer)
+Google Docs kabi onlayn hujjatlarning asosiy afzalligi nima?|Bir nechta foydalanuvchi bir vaqtning o’zida birgalikda tahrirlay oladi|Faqat internetsiz ishlaydi|Faqat bitta foydalanuvchi ishlata oladi|Faqat rasm yaratish uchun mo’ljallangan`,
+ru:`В каких единицах измеряется тактовая частота, определяющая скорость процессора?|ГБ|ГГц|dpi|Мбит/с
+В какой последовательности обрабатываются данные по принципу работы компьютера?|Вывод → Ввод → Обработка|Обработка → Вывод → Ввод|Ввод → Обработка → Вывод|Хранение → Вывод → Ввод
+В каком устройстве временно хранятся текущие данные работающей программы?|Оперативная память (RAM)|HDD|Монитор|Сканер
+Что из перечисленного не является операционной системой?|Google Chrome|Linux|macOS|iOS
+Что такое рабочий стол (Desktop) в Windows?|Программа, предназначенная только для печати файлов|Основная рабочая область, которая отображается после запуска системы; на ней находятся ярлыки и панель задач|Только интернет-браузер|Оперативная память компьютера
+Какова основная функция меню «Пуск» (Start) в Windows?|Только печать файла|Быстрый доступ к программам, настройкам и поиску|Увеличение скорости интернета|Удаление вирусов
+Сколько МБ в 2 ГБ (при расчёте 1 ГБ = 1024 МБ)?|1000 МБ|2000 МБ|2048 МБ|4096 МБ
+Какое расширение файла обычно обозначает исполняемую программу?|.jpg|.docx|.mp3|.exe
+Какая последовательность клавиш используется для перемещения файла из одной папки в другую (без сохранения копии)?|Ctrl+X, затем Ctrl+V|Ctrl+C, затем Ctrl+Z|Ctrl+Z, затем Ctrl+V|F2, затем Delete
+Куда обычно попадает файл, удалённый клавишей Delete в Windows, и можно ли его восстановить?|Удаляется полностью, восстановить нельзя|Попадает в Корзину (Recycle Bin), восстановить можно|Копируется на флешку|Копируется на рабочий стол
+К какому типу устройств относится сканер?|Устройство вывода|Устройство хранения|Устройство ввода|Звуковое устройство
+Какая пара состоит только из устройств вывода?|Принтер и проектор|Клавиатура и мышь|Веб-камера и сканер|Монитор и клавиатура
+Какая часть системного блока соединяет между собой все основные устройства компьютера?|Процессор|RAM|HDD|Материнская плата
+В чём основное преимущество SSD перед HDD?|Предназначен только для чтения|Нет движущихся механических частей, поэтому работает быстрее|Работает без электричества|Не сохраняет данные
+Какой ряд состоит только из браузеров?|Chrome, Word, Safari|Edge, Excel, Firefox|Chrome, Edge, Firefox|Firefox, Paint, Safari
+Что используется в поисковой системе для поиска слов точно в заданном порядке?|Кавычки " "|Звёздочка *|Решётка #|Скобки ( )
+Как действует троян?|Только повышает скорость компьютера|Архивирует файлы|Обновляет антивирус|Выдаёт себя за полезную программу и наносит вред компьютеру
+Какой вред наносит программа-вымогатель (ransomware)?|Только уменьшает яркость экрана|Шифрует файлы и требует выкуп за их расшифровку|Отключает клавиатуру|Только ускоряет интернет
+Какую защиту даёт 2FA (двухфакторная аутентификация)?|Автоматически меняет пароль|Архивирует файлы|Требует дополнительное подтверждение (например, SMS-код), даже если пароль верный|Заменяет антивирус
+Каково основное правило метода слепой десятипальцевой печати (touch typing)?|Печатать всеми пальцами, не глядя на клавиатуру|Печатать только правой рукой|Печатать только двумя пальцами|Печатать с помощью мыши
+Что делает клавиша Backspace при наборе текста?|Сохраняет текст|Открывает новую строку|Печатает текст|Удаляет символ слева от курсора
+Что называют «цифровым следом» (digital footprint)?|Отпечатки пальцев на клавиатуре|Следы активности пользователя, оставленные в интернете|Только удалённые файлы|Только отчёты антивируса
+Какой способ определения достоверности информации наиболее правильный?|Доверять посту, набравшему больше всего лайков|Читать только заголовок|Проверить информацию в нескольких надёжных источниках|Безоговорочно верить сообщению от друга
+В чём суть цифровой трансформации?|Реорганизация процессов на основе цифровых технологий|Только покупка нового компьютера|Перенос документов на бумагу|Отключение интернета
+Каково главное преимущество электронного документооборота?|Документы существуют только в одном экземпляре|Документы можно хранить только на бумаге|Интернет не требуется|Документы быстро передаются, экономятся время и расходы
+Какова функция DNS?|Обнаружение вирусов|Преобразование доменного имени в IP-адрес|Хранение паролей|Сжатие файлов
+Что такое хостинг?|Услуга предоставления места на сервере, где хранятся файлы сайта|Тип браузера|Антивирусная программа|Служба электронной почты
+Чем протокол HTTPS отличается от HTTP?|Открывает только изображения|Работает без интернета|Шифрует данные и передаёт их безопасно|Используется только для почты
+Какое разрешение нужно дать, чтобы другие могли только просматривать документ в облаке, но не изменять его?|Владелец (Owner)|Редактор (Editor)|Доступ не предоставляется|Читатель (Viewer)
+Каково главное преимущество онлайн-документов, таких как Google Docs?|Несколько пользователей могут редактировать одновременно|Работает только без интернета|Работать может только один пользователь|Предназначен только для создания изображений`,
+kk:`Processordıń tezligin ańlatatuǵın taktlik chastota qanday birlikte ólshenedi?|GB|GHz|dpi|Mbit/s
+Kompyuterdiń islew principinde maǵlıwmatlar qanday izbe-izlikte islenedi?|Shıǵarıw → Kiritiw → Qayta islew|Qayta islew → Shıǵarıw → Kiritiw|Kiritiw → Qayta islew → Shıǵarıw|Saqlaw → Shıǵarıw → Kiritiw
+Islep atırǵan baǵdarlamanıń házirgi maǵlıwmatları waqtınsha qaysı qurılmada saqlanadı?|Operativ yad (RAM)|HDD|Monitor|Skaner
+Tómendegilerdiń qaysısı operatsion sistema esaplanbaydı?|Google Chrome|Linux|macOS|iOS
+Windows ta jumıs stolı (Desktop) degen ne?|Tek fayllardı shıǵarıw ushın mólsherlengen baǵdarlama|Sistema qosılǵannan keyin kóriniwshi tiykarǵı jumıs maydanı, onda yarlıqlar hám tapsırmalar paneli jaylasadı|Tek internet brauzeri|Kompyuterdiń operativ yadı
+Windows tağı Start menyusınıń tiykarǵı wazıypası nede?|Tek fayldı printerde shıǵarıw|Baǵdarlamalar, sazlawlar hám izlewge tez kiriwdi támiyinlew|Internet tezligin asırıw|Viruslardı óshiriw
+2 GB neshe MB ǵa teń (1 GB = 1024 MB esabında)?|1000 MB|2000 MB|2048 MB|4096 MB
+Qaysı fayl keńeytpesi ádette orınlanatuǵın baǵdarlamanı ańlatadı?|.jpg|.docx|.mp3|.exe
+Fayldı bir papkadan basqasına kóshiriw (nusqası qalmaytuǵın etip) ushın qaysı túymeler izbe-izligi isletiledi?|Ctrl+X, soń Ctrl+V|Ctrl+C, soń Ctrl+Z|Ctrl+Z, soń Ctrl+V|F2, soń Delete
+Windows ta Delete túymesi menen óshirilgen fayl ádette qayerge túsedi hám tiklew múmkin be?|Pútinley joǵaladı, tiklep bolmaydı|Sebetke (Recycle Bin) túsedi, tiklew múmkin|Fleshkaǵa kóshedi|Jumıs stolına kóshedi
+Skaner qanday túrdegi qurılma esaplanadı?|Shıǵarıw qurılması|Saqlaw qurılması|Kiritiw qurılması|Dawıs qurılması
+Tómendegi qurılmalardıń qaysı jubı tek shıǵarıw qurılmalarınan ibarat?|Printer hám proyektor|Klaviatura hám sichqansha|Veb-kamera hám skaner|Monitor hám klaviatura
+Sistema blokında kompyuterdiń barlıq tiykarǵı qurılmaların óz ara baylanıstıratuǵın bólim qaysı?|Processor|RAM|HDD|Ana plata
+SSD dıń HDD dan tiykarǵı artıqmashılıǵı nede?|Tek oqıw ushın mólsherlengen|Háreketlenetuǵın mexanikalıq bólimleri joq, sonıń ushın tezirek isleydi|Elektr tokısız isleydi|Maǵlıwmattı saqlamaydı
+Tómendegi qatarlardıń qaysısı tek brauzerlerden ibarat?|Chrome, Word, Safari|Edge, Excel, Firefox|Chrome, Edge, Firefox|Firefox, Paint, Safari
+Izlew sistemasında sózlerdi dál berilgen tártipte izlew ushın ne isletiledi?|Tırnaq belgisi " "|Juldızsha *|Panjara #|Qawsırma ( )
+Troyan baǵdarlaması qanday isleydi?|Tek kompyuter tezligin asıradı|Fayllardı arxivleydi|Antivirustı jańalaydı|Ózin paydalı baǵdarlama etip kórsetip, kompyuterge zıyan keltiredi
+Ransomware qanday zıyan keltiredi?|Tek ekran jaqtılıǵın kemeytedi|Fayllardı shifrlap, ashıw ushın tólem talap etedi|Klaviaturanı óshiredi|Tek internetti tezletedi
+2FA (eki basqıshlı autentifikatsiya) qanday qorǵaw beredi?|Paroldi avtomatik ózgertedi|Fayllardı arxivleydi|Parol dúrıs bolsa da, qosımsha tastıyıqlaw (mısalı, SMS kod) talap etedi|Antivirus ornın basadı
+Touch typing (10 barmaqta jazıw) usılınıń tiykarǵı qaǵıydası qaysı?|Klaviaturaǵa qaramastan, barlıq barmaqlar menen jazıw|Tek oń qol menen jazıw|Tek eki barmaq penen jazıw|Sichqansha menen jazıw
+Tekst teriwde Backspace túymesi ne isleydi?|Tekstti saqlaydı|Jańa qatar ashadı|Tekstti printerde shıǵaradı|Kursordan shep tárepindegi belgini óshiredi
+«Sanlı iz» (digital footprint) dep nege aytıladı?|Klaviaturadaǵı barmaq izlerine|Paydalanıwshınıń internette qaldırǵan iskerlik izlerine|Tek óshirilgen fayllarǵa|Tek antivirus esabatlarına
+Aqparattıń isenimliligin anıqlawdıń eń durıs usılı qaysı?|Eń kóp layk alǵan postqa isiniw|Tek sarlawhanı oqıw|Bir neshe isenimli deregte tekserip kóriw|Dos jibergen xabarǵa sózsiz isiniw
+Sanlı transformatsiyanıń mánisi nede?|Processlerdi sanlı texnologiyalar tiykarında qayta shólkemlestiriw|Tek jańa kompyuter satıp alıw|Hújjetlerdi qaǵazǵa kóshiriw|Internetti óshirip qoyıw
+Elektron hújjet aylanısınıń tiykarǵı artıqmashılıǵı nede?|Hújjetler tek bir nusqada boladı|Hújjetlerdi tek qaǵazda saqlaw múmkin|Internet talap etilmeydi|Hújjetler tez almasadı, waqıt hám shıǵın únemlenedi
+DNS tiń wazıypası nede?|Viruslardı anıqlaw|Domen atın IP-mánzilge aylandırıw|Parollerdi saqlaw|Fayllardı qısıw
+Hosting degen ne?|Veb-sayt fayllari saqlanatuǵın serverde orın ajıratıw xızmeti|Brauzer túri|Antivirus baǵdarlaması|Elektron pochta xızmeti
+HTTPS protokolı HTTP dan nesi menen parıq qıladı?|Tek suwretlerdi ashadı|Internetsiz isleydi|Maǵlıwmatlardı shifrlap, qáwipsiz uzatadı|Tek pochta ushın isletiledi
+Bulttaǵı hújjetti basqalar tek kóre alıwı, ózgerte almawı ushın qaysı ruxsat beriledi?|Iyesi (Owner)|Redaktorlawshı (Editor)|Ruxsat berilmeydi|Kóriwshi (Viewer)
+Google Docs sıyaqlı onlayn hújjetlerdiń tiykarǵı artıqmashılıǵı nede?|Bir neshe paydalanıwshı bir waqıtta birgelikte redaktorlay aladı|Tek internetsiz isleydi|Tek bir paydalanıwshı isley aladı|Tek suwret jaratıw ushın mólsherlengen`};
+const D={};for(const k in RAW)D[k]=RAW[k].split("\n").map(l=>l.split("|"));
+const L={
+uz:{n:"Ism va familiya",c:"Sinf",st:"Testni boshlash",inf:"30 ta savol · 20 daqiqa. Har bir javobdan so’ng to’g’ri javob ko’rsatiladi.",need:"Ism va sinfni kiriting",q:"Savol",nx:"Keyingi",fn:"Yakunlash",ok:"To’g’ri!",bad:"Noto’g’ri. To’g’ri javob:",res:"Natija",sc:"Ball",pc:"Foiz",tm:"Vaqt",rv:"Xatolar tahlili",none:"Xato yo’q — a’lo natija!",ag:"Qayta topshirish",cp:"Natijani nusxalash",cd:"Nusxalandi",sv:"Natija o’qituvchiga saqlandi",ns:"Natija saqlanmadi — ballingizni o’qituvchiga ko’rsating",tu:"Vaqt tugadi!",ya:"Sizning javobingiz:",ca:"To’g’ri javob:",ad:"Admin",lgn:"Login",pw:"Parol",en:"Kirish",wr:"Login yoki parol noto’g’ri",np:"Natijalarni ko’rish uchun claude.ai da admin hisobingiz bilan kiring",bk:"Orqaga",em:"Hali natijalar yo’q",dt:"Sana",lg:"Til",rf:"Yangilash",cs:"CSV yuklab olish",dn:"Javob berilmagan"},
+ru:{n:"Фамилия и имя",c:"Класс",st:"Начать тест",inf:"30 вопросов · 20 минут. После каждого ответа показывается правильный вариант.",need:"Введите имя и класс",q:"Вопрос",nx:"Далее",fn:"Завершить",ok:"Верно!",bad:"Неверно. Правильный ответ:",res:"Результат",sc:"Баллы",pc:"Процент",tm:"Время",rv:"Разбор ошибок",none:"Ошибок нет — отличный результат!",ag:"Пройти заново",cp:"Скопировать результат",cd:"Скопировано",sv:"Результат сохранён для учителя",ns:"Результат не сохранён — покажите баллы учителю",tu:"Время вышло!",ya:"Ваш ответ:",ca:"Правильный ответ:",ad:"Админ",lgn:"Логин",pw:"Пароль",en:"Войти",wr:"Неверный логин или пароль",np:"Чтобы видеть результаты, войдите в claude.ai под аккаунтом администратора",bk:"Назад",em:"Результатов пока нет",dt:"Дата",lg:"Язык",rf:"Обновить",cs:"Скачать CSV",dn:"Нет ответа"},
+kk:{n:"Atı-jóni",c:"Klass",st:"Testti baslaw",inf:"30 soraw · 20 minut. Hár bir juwaptan soń durıs juwap kórsetiledi.",need:"Atı-jóni hám klassıńızdı kiritiń",q:"Soraw",nx:"Keyingi",fn:"Juwmaqlaw",ok:"Durıs!",bad:"Qate. Durıs juwap:",res:"Nátiyje",sc:"Ball",pc:"Procent",tm:"Waqıt",rv:"Qatelerdi talqılaw",none:"Qate joq — ájayıp nátiyje!",ag:"Qaytadan tapsırıw",cp:"Nátiyjeni kóshiriw",cd:"Kóshirildi",sv:"Nátiyje oqıtıwshıǵa saqlandı",ns:"Nátiyje saqlanbadı — balıńızdı oqıtıwshıǵa kórsetiń",tu:"Waqıt tamamlandı!",ya:"Sizdiń juwabıńız:",ca:"Durıs juwap:",ad:"Admin",lgn:"Login",pw:"Parol",en:"Kiriw",wr:"Login yamasa parol qate",np:"Nátiyjelerdi kóriw ushın claude.ai ta admin akkauntıńız benen kiriń",bk:"Artqa",em:"Házirshe nátiyjeler joq",dt:"Sáne",lg:"Til",rf:"Jańalaw",cs:"CSV júklep alıw",dn:"Juwap berilmegen"}};
+const S={lang:"uz",scr:"start",name:"",cls:"",i:0,a:Array(30).fill(-1),t0:0,spent:0,saved:null,admin:false,rows:[]};
+let timer=null,db=null,uid=null,user=null;
+const $=id=>document.getElementById(id),t=k=>L[S.lang][k],esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const AB="ABCD",left=()=>Math.max(0,MIN*60-Math.floor((Date.now()-S.t0)/1000)),fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const score=()=>S.a.reduce((n,v,i)=>n+(v===ANS.charCodeAt(i)-65?1:0),0);
+function langBar(){$("lg").innerHTML=["uz","ru","kk"].map(l=>`<button class="${S.lang===l?"on":""}" data-l="${l}">${{uz:"O’zb",ru:"Рус",kk:"Qar"}[l]}</button>`).join("");document.documentElement.lang=S.lang==="kk"?"kk":S.lang;}
+$("lg").onclick=e=>{const l=e.target.dataset.l;if(l){keep();S.lang=l;langBar();draw();}};
+function keep(){const n=$("nm"),c=$("cl");if(n)S.name=n.value;if(c)S.cls=c.value;}
+function draw(){const a=$("app");
+if(S.scr==="start"){a.innerHTML=`<div class="card"><h1>Computer Science Foundation</h1><p>${t("inf")}</p><label>${t("n")}</label><input id="nm" value="${esc(S.name)}" maxlength="60"><label>${t("c")}</label><input id="cl" value="${esc(S.cls)}" maxlength="20"><div id="er" class="fb no" hidden>${t("need")}</div><button class="btn" id="go">${t("st")}</button> <button class="btn s" id="ad">${t("ad")}</button></div>`;
+$("go").onclick=()=>{keep();if(!S.name.trim()||!S.cls.trim()){$("er").hidden=false;return}S.scr="test";S.t0=Date.now();S.i=0;S.a=Array(30).fill(-1);timer=setInterval(tick,1000);draw()};
+$("ad").onclick=async()=>{keep();S.scr=(S.cred&&await load())?"admin":"login";draw()};}
+else if(S.scr==="login"){a.innerHTML=`<div class="card"><h2>${t("ad")}</h2><label>${t("lgn")}</label><input id="lu" autocomplete="username"><label>${t("pw")}</label><input id="lp" type="password" autocomplete="current-password"><div id="le" class="fb no" hidden>${t("wr")}</div><button class="btn" id="lb">${t("en")}</button> <button class="btn s" id="lk">${t("bk")}</button></div>`;
+$("lk").onclick=()=>{S.scr="start";draw()};$("lb").onclick=async()=>{S.cred={login:$("lu").value.trim(),password:$("lp").value};if(await load()){S.scr="admin";draw()}else{S.cred=null;$("le").hidden=false}}}
+else if(S.scr==="test"){const i=S.i,q=D[S.lang][i],ch=S.a[i],ci=ANS.charCodeAt(i)-65;
+a.innerHTML=`<div class="card"><div class="meta"><span>${t("q")} ${i+1}/30</span><span class="tm" id="tm">⏱ ${fmt(left())}</span></div><div class="bar"><i style="width:${i/30*100}%"></i></div><div class="q">${esc(q[0])}</div>${[1,2,3,4].map(j=>`<button class="o ${ch>=0?(j-1===ci?"ok":j-1===ch?"no":""):""}" data-j="${j-1}" ${ch>=0?"disabled":""}><b>${AB[j-1]}</b><span>${esc(q[j])}</span></button>`).join("")}${ch>=0?(ch===ci?`<div class="fb ok">✓ ${t("ok")}</div>`:`<div class="fb no">✗ ${t("bad")} ${AB[ci]}) ${esc(q[ci+1])}</div>`)+`<button class="btn" id="nx">${i<29?t("nx")+" →":t("fn")}</button>`:""}</div>`;
+a.querySelectorAll(".o").forEach(b=>b.onclick=()=>{S.a[i]=+b.dataset.j;draw()});
+if($("nx"))$("nx").onclick=()=>{i<29?(S.i++,draw()):finish()};}
+else if(S.scr==="result")result();else admin();}
+function tick(){const l=left(),e=$("tm");if(e){e.textContent="⏱ "+fmt(l);e.classList.toggle("lo",l<60)}if(l<=0)finish(true)}
+async function finish(to){clearInterval(timer);S.spent=Math.min(MIN*60,Math.floor((Date.now()-S.t0)/1000));S.to=!!to;S.scr="result";S.saved=null;draw();
+const r={name:S.name.trim(),cls:S.cls.trim(),score:score(),total:30,pct:Math.round(score()/30*100),spent:S.spent,lang:S.lang,ts:Date.now(),answers:S.a.map(v=>v<0?"-":AB[v]).join("")};
+S.saved=false;for(let k=0;k<3&&!S.saved;k++){try{const x=await fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(r)});S.saved=x.ok}catch(e){await new Promise(z=>setTimeout(z,1500))}}
+if(S.scr==="result")draw()}
+function result(){const sc=score(),p=Math.round(sc/30*100),w=[];S.a.forEach((v,i)=>{if(v!==ANS.charCodeAt(i)-65)w.push(i)});
+$("app").innerHTML=`<div class="card"><h2>${t("res")}${S.to?" — "+t("tu"):""}</h2><div class="big">${sc}/30</div><div class="grid"><div><b>${p}%</b>${t("pc")}</div><div><b>${fmt(S.spent)}</b>${t("tm")}</div><div><b>${esc(S.cls)}</b>${esc(S.name)}</div></div>${S.saved===null?"":`<div class="fb ${S.saved?"ok":"no"}">${S.saved?t("sv"):t("ns")}</div>`}<button class="btn" id="ag">${t("ag")}</button> <button class="btn s" id="cp">${t("cp")}</button></div><div class="card"><h2>${t("rv")}</h2>${w.length?w.map(i=>{const q=D[S.lang][i],ci=ANS.charCodeAt(i)-65,v=S.a[i];return`<div class="rv"><b>${i+1}. ${esc(q[0])}</b><div class="a">✗ ${t("ya")} ${v<0?t("dn"):AB[v]+") "+esc(q[v+1])}</div><div class="c">✓ ${t("ca")} ${AB[ci]}) ${esc(q[ci+1])}</div></div>`}).join(""):`<p>${t("none")}</p>`}</div>`;
+$("ag").onclick=()=>{S.scr="start";draw()};
+$("cp").onclick=async()=>{const x=`${S.name} | ${S.cls} | ${sc}/30 (${p}%) | ${fmt(S.spent)}`;try{await navigator.clipboard.writeText(x)}catch(e){}$("cp").textContent=t("cd")}}
+async function load(){try{const x=await fetch("/api/admin",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(S.cred)});if(!x.ok)return false;S.rows=(await x.json()).rows.sort((a,b)=>b.ts-a.ts);return true}catch(e){return false}}
+function admin(){const r=S.rows;$("app").innerHTML=`<div class="card"><h2>${t("ad")} (${r.length})</h2><button class="btn s" id="bk" style="margin:0">${t("bk")}</button> <button class="btn s" id="rf" style="margin:0">${t("rf")}</button> <button class="btn s" id="cs" style="margin:0">${t("cs")}</button>${S.np?`<div class="fb no" style="margin-top:12px">${t("np")}</div>`:""}<div class="sc" style="margin-top:12px">${r.length?`<table><tr><th>#</th><th>${t("n")}</th><th>${t("c")}</th><th>${t("sc")}</th><th>%</th><th>${t("tm")}</th><th>${t("lg")}</th><th>${t("dt")}</th></tr>${r.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.name)}</td><td>${esc(x.cls)}</td><td>${x.score}/${x.total}</td><td>${x.pct}%</td><td>${fmt(x.spent)}</td><td>${esc(x.lang)}</td><td>${new Date(x.ts).toLocaleString()}</td></tr>`).join("")}</table>`:`<p>${t("em")}</p>`}</div></div>`;
+$("bk").onclick=()=>{S.scr="start";draw()};$("rf").onclick=async()=>{await load();draw()};
+$("cs").onclick=async()=>{const c="\ufeffname,class,score,percent,seconds,lang,date,answers\n"+r.map(x=>[x.name,x.cls,x.score,x.pct,x.spent,x.lang,new Date(x.ts).toISOString(),x.answers].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");const u=URL.createObjectURL(new Blob([c],{type:"text/csv"})),l=document.createElement("a");l.href=u;l.download="results.csv";l.click();URL.revokeObjectURL(u)}}
+langBar();draw();
+
+</script></body></html>
