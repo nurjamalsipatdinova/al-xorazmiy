@@ -31,10 +31,157 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
 .grid div{background:var(--bg);border-radius:10px;padding:10px;text-align:center;font-size:13px;color:var(--mu)}.grid b{display:block;font-size:18px;color:var(--tx)}
 .rv{border-top:1px solid var(--bd);padding:12px 0;font-size:15px}.rv .a{color:var(--no)}.rv .c{color:var(--ok)}
 .sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.seg .btn{margin:0;padding:10px 16px}.btn.on{background:var(--pr);color:var(--prt);border-color:var(--pr)}
 </style></head><body><div class="w"><div class="top"><b>Computer Science Foundation</b><div class="lang" id="lg"></div></div><div id="app"></div></div>
 <script>
-const ANS="BCAABBCDABCADBCADBCADBCADBACDA",MIN=20;
-const RAW={uz:`Protsessorning tezligini ifodalovchi takt chastotasi qaysi birlikda o’lchanadi?|GB|GHz|dpi|Mbit/s
+const MIN=20;
+const T={A:{n:25,ans:"CABDABDCACBDBCADBCADBCADB",uz:`Protsessor bilan to’g’ridan-to’g’ri ishlaydigan, tez, lekin vaqtinchalik xotira qaysi?|HDD|SSD|Tezkor xotira (RAM)|Fleshka
+Protsessorning ish unumdorligiga ta’sir qiluvchi asosiy ko’rsatkichlar qaysilar?|Yadrolar soni va takt chastotasi|Monitor o’lchami va yorqinligi|Klaviatura tugmalari soni|Printerning chop etish tezligi
+Quyidagilardan qaysi biri operatsion tizim hisoblanadi?|Microsoft Excel|Windows|Google Chrome|Telegram
+1 KB necha baytga teng (1024 hisobida)?|8|100|1000|1024
+Quyidagi kengaytmalardan qaysi biri audio faylga tegishli?|.mp3|.png|.docx|.exe
+Ctrl+C va Ctrl+V ketma-ket bosilsa nima bo’ladi?|Fayl o’chiriladi|Fayl nusxasi qo’yiladi, asl fayl joyida qoladi|Fayl nomi o’zgaradi|Oxirgi amal bekor qilinadi
+Qaysi qatorda faqat kiritish qurilmalari keltirilgan?|Monitor, printer, kolonka|Printer, skaner, proyektor|Kolonka, klaviatura, monitor|Klaviatura, sichqoncha, skaner
+Noma’lum jo’natuvchidan kelgan elektron xatdagi havola va fayl bilan nima qilish kerak?|Darhol ochib ko’rish|Do’stlarga yuborish|Ochmasdan, ehtiyot bo’lib, jo’natuvchini tekshirish|Parolni yozib yuborish
+Antivirus dasturining asosiy vazifasi nima?|Zararli dasturlarni aniqlash va yo’q qilish|Internet tezligini oshirish|Fayllarni nusxalash|Ekran yorqinligini boshqarish
+Touch typing usulida barmoqlar boshlang’ich holatda klaviaturaning qaysi qatorida turadi?|Raqamlar qatorida|Pastki qatorda|Asosiy qatorda (A S D F — J K L ;)|Funksiya tugmalari qatorida
+Internetda muloqot odobiga qaysi xatti-harakat mos keladi?|Boshqalarni haqoratlash|Boshqalarni hurmat qilib, odobli yozish|Birovning rasmini ruxsatsiz tarqatish|Yolg’on xabar tarqatish
+Davlat xizmatlarini onlayn olish raqamli transformatsiyaning qaysi afzalligini ko’rsatadi?|Navbat va qog’ozbozlik ko’payishini|Jarayon sekinlashishini|Xarajat oshishini|Vaqt va xarajat tejalishini, jarayon tezlashishini
+IP-manzil nima?|Veb-sayt dizayni|Qurilmani tarmoqda aniqlovchi raqamli manzil|Brauzer nomi|Parol turi
+Quyidagilardan qaysi biri domen nomiga misol bo’ladi?|192.168.1.1|https|example.uz|.exe
+Brauzerga domen nomi kiritilgandan keyin dastlab nima sodir bo’ladi?|DNS orqali domenga mos IP-manzil aniqlanadi|Sayt yopiladi|Antivirus o’chadi|Fayllar o’chiriladi
+Bulutli saqlash xizmatining asosiy afzalligi nima?|Faqat bitta kompyuterda ishlaydi|Internet talab qilinmaydi|Fayllarni boshqalarga ulashib bo’lmaydi|Fayllarga istalgan qurilmadan internet orqali kirish mumkin
+Google Sheets nima uchun ishlatiladi?|Taqdimot tayyorlash uchun|Elektron jadvallar bilan ishlash uchun|Video montaj uchun|Viruslarni topish uchun
+Bulutdagi faylga "Tahrirlovchi" (Editor) ruxsati berilsa, foydalanuvchi nima qila oladi?|Faqat ko’ra oladi|Faylga umuman kira olmaydi|Faylni ko’ra oladi va o’zgartira oladi|Faqat chop eta oladi
+Git nima?|Versiyalarni boshqarish tizimi (Version Control)|Brauzer|Antivirus dasturi|Operatsion tizim
+Git’da yangi repozitoriy yaratish (loyihani boshlash) uchun qaysi buyruq ishlatiladi?|git push|git log|git pull|git init
+Git’da commit nima?|Faylni o’chirish|O’zgarishlarni loyiha tarixiga saqlab qo’yish|Sayt ochish|Parol o’rnatish
+Data Science (Ma’lumotlar ilmi) nima bilan shug’ullanadi?|Faqat dastur dizayni bilan|Faqat tarmoq kabellarini ulash bilan|Ma’lumotlarni yig’ish, tahlil qilish va xulosa chiqarish bilan|Printerlarni ta’mirlash bilan
+Machine Learning (Mashinani o’rgatish) mohiyati nimada?|Dastur ma’lumotlardan o’rganib, qaror yoki bashorat qila oladi|Kompyuterni qo’lda yig’ish|Faqat matn terish|Internetni o’chirish
+Phishing nima?|Tarmoq tezligini o’lchash usuli|Fayllarni siqish dasturi|Antivirusning bir turi|Soxta xat yoki sayt orqali parol va ma’lumotlarni aldab olish
+Akkauntni himoya qilishning eng ishonchli usuli qaysi?|Hamma joyda bitta parol ishlatish|Kuchli, noyob parol va 2FA ishlatish|Parolni do’stga aytib qo’yish|Parol qo’ymaslik`,ru:`Какая память работает непосредственно с процессором, быстрая, но временная?|HDD|SSD|Оперативная память (RAM)|Флешка
+Какие основные показатели влияют на производительность процессора?|Количество ядер и тактовая частота|Размер и яркость монитора|Количество клавиш клавиатуры|Скорость печати принтера
+Что из перечисленного является операционной системой?|Microsoft Excel|Windows|Google Chrome|Telegram
+Сколько байт в 1 КБ (при расчёте 1024)?|8|100|1000|1024
+Какое из расширений относится к аудиофайлу?|.mp3|.png|.docx|.exe
+Что произойдёт, если нажать Ctrl+C, а затем Ctrl+V?|Файл будет удалён|Будет вставлена копия файла, исходный файл останется на месте|Изменится имя файла|Будет отменено последнее действие
+В каком ряду перечислены только устройства ввода?|Монитор, принтер, колонка|Принтер, сканер, проектор|Колонка, клавиатура, монитор|Клавиатура, мышь, сканер
+Что нужно делать со ссылкой и файлом из письма от неизвестного отправителя?|Сразу открыть|Переслать друзьям|Не открывать, быть осторожным и проверить отправителя|Отправить свой пароль
+Какова основная задача антивирусной программы?|Обнаруживать и удалять вредоносные программы|Увеличивать скорость интернета|Копировать файлы|Управлять яркостью экрана
+В каком ряду клавиатуры находятся пальцы в исходном положении при методе слепой печати?|В ряду цифр|В нижнем ряду|В основном ряду (Ф Ы В А — О Л Д Ж)|В ряду функциональных клавиш
+Какое поведение соответствует этикету общения в интернете?|Оскорблять других|Писать вежливо, уважая других|Распространять чужие фото без разрешения|Распространять ложные сообщения
+Какое преимущество цифровой трансформации показывает получение госуслуг онлайн?|Рост очередей и бумажной волокиты|Замедление процесса|Рост расходов|Экономию времени и расходов, ускорение процесса
+Что такое IP-адрес?|Дизайн веб-сайта|Цифровой адрес, определяющий устройство в сети|Название браузера|Тип пароля
+Что из перечисленного является примером доменного имени?|192.168.1.1|https|example.uz|.exe
+Что происходит в первую очередь после ввода доменного имени в браузере?|Через DNS определяется IP-адрес, соответствующий домену|Сайт закрывается|Антивирус отключается|Файлы удаляются
+В чём основное преимущество облачного хранилища?|Работает только на одном компьютере|Не требует интернета|Файлами нельзя делиться|К файлам можно получить доступ с любого устройства через интернет
+Для чего используется Google Sheets?|Для создания презентаций|Для работы с электронными таблицами|Для видеомонтажа|Для поиска вирусов
+Что может делать пользователь, если ему дан доступ «Редактор» (Editor) к файлу в облаке?|Только просматривать|Вообще не может открыть файл|Просматривать и изменять файл|Только печатать
+Что такое Git?|Система контроля версий (Version Control)|Браузер|Антивирусная программа|Операционная система
+Какая команда используется в Git для создания нового репозитория (начала проекта)?|git push|git log|git pull|git init
+Что такое commit в Git?|Удаление файла|Сохранение изменений в истории проекта|Открытие сайта|Установка пароля
+Чем занимается Data Science (наука о данных)?|Только дизайном программ|Только подключением сетевых кабелей|Сбором, анализом данных и формулированием выводов|Ремонтом принтеров
+В чём суть Machine Learning (машинного обучения)?|Программа учится на данных и может принимать решения или делать прогнозы|Ручная сборка компьютера|Только набор текста|Отключение интернета
+Что такое фишинг (phishing)?|Способ измерения скорости сети|Программа для сжатия файлов|Вид антивируса|Выманивание паролей и данных с помощью поддельного письма или сайта
+Какой способ защиты аккаунта самый надёжный?|Использовать один пароль везде|Использовать надёжный уникальный пароль и 2FA|Сообщить пароль другу|Не ставить пароль`,kk:`Processor menen tikkeley islesetuǵın, tez, biraq waqtınsha yad qaysı?|HDD|SSD|Operativ yad (RAM)|Fleshka
+Processordıń jumıs ónimdarlıǵına tásir etetuǵın tiykarǵı kórsetkishler qaysılar?|Yadrolar sanı hám taktlik chastota|Monitor ólshemi hám jaqtılıǵı|Klaviatura túymeleri sanı|Printerdiń shıǵarıw tezligi
+Tómendegilerdiń qaysısı operatsion sistema esaplanadı?|Microsoft Excel|Windows|Google Chrome|Telegram
+1 KB neshe baytqa teń (1024 esabında)?|8|100|1000|1024
+Tómendegi keńeytpelerdiń qaysısı audio faylǵa tiyisli?|.mp3|.png|.docx|.exe
+Ctrl+C hám Ctrl+V izbe-iz basılsa ne boladı?|Fayl óshiriledi|Fayl nusqası qoyıladı, tiykarǵı fayl ornında qaladı|Fayl atı ózgeredi|Sońǵı ámel biykar etiledi
+Qaysı qatarda tek kiritiw qurılmaları keltirilgen?|Monitor, printer, kolonka|Printer, skaner, proyektor|Kolonka, klaviatura, monitor|Klaviatura, sichqansha, skaner
+Belgisiz jiberiwshiden kelgen elektron xattaǵı siltew hám fayl menen ne islew kerek?|Derhal ashıp kóriw|Doslarǵa jiberiw|Ashpastan, abaylap, jiberiwshini tekseriw|Paroldi jazıp jiberiw
+Antivirus baǵdarlamasınıń tiykarǵı wazıypası nede?|Zıyanlı baǵdarlamalardı anıqlaw hám joq etiw|Internet tezligin asırıw|Fayllardı kóshiriw|Ekran jaqtılıǵın basqarıw
+Touch typing usılında barmaqlar baslanǵısh jaǵdayda klaviaturanıń qaysı qatarında turadı?|Sanlar qatarında|Tómengi qatarda|Tiykarǵı qatarda (A S D F — J K L ;)|Funkciya túymeleri qatarında
+Internette muzakere ádebine qaysı is-háreket sáykes keledi?|Basqalardı qorlaw|Basqalardı húrmetlep, ádepli jazıw|Birewdiń suwretin ruxsatsız tarqatıw|Jalǵan xabar tarqatıw
+Mámleketlik xızmetlerdi onlayn alıw sanlı transformatsiyanıń qaysı artıqmashılıǵın kórsetedi?|Nawbet hám qaǵazbazlıq kóbeyiwin|Process sekinlesiwin|Shıǵın artıwın|Waqıt hám shıǵın únemlenip, process tezlesiwin
+IP-mánzil degen ne?|Veb-sayt dizaynı|Qurılmanı tarmaqta anıqlawshı sanlı mánzil|Brauzer atı|Parol túri
+Tómendegilerdiń qaysısı domen atına mısal boladı?|192.168.1.1|https|example.uz|.exe
+Brauzerge domen atı kiritilgennen keyin dáslep ne boladı?|DNS arqalı domenge sáykes IP-mánzil anıqlanadı|Sayt jabıladı|Antivirus óshedi|Fayllar óshiriledi
+Bulttaǵı saqlaw xızmetiniń tiykarǵı artıqmashılıǵı nede?|Tek bir kompyuterde isleydi|Internet talap etilmeydi|Fayllardı basqalarǵa ulasıp bolmaydı|Fayllarǵa hár qanday qurılmadan internet arqalı kiriw múmkin
+Google Sheets ne ushın isletiledi?|Prezentatsiya tayarlaw ushın|Elektron kestelerde islew ushın|Video montaj ushın|Viruslardı tabıw ushın
+Bulttaǵı faylǵa «Redaktorlawshı» (Editor) ruxsatı berilse, paydalanıwshı ne ete aladı?|Tek kóre aladı|Faylǵa uliwma kire almaydı|Faylǵa kóre aladı hám ózgerte aladı|Tek printerde shıǵara aladı
+Git degen ne?|Versiyalardı basqarıw sisteması (Version Control)|Brauzer|Antivirus baǵdarlaması|Operatsion sistema
+Git te jańa repozitoriy jaratıw (joybardı baslaw) ushın qaysı buyrıq isletiledi?|git push|git log|git pull|git init
+Git te commit degen ne?|Fayldı óshiriw|Ózgerislerdi joybar tariyxına saqlap qoyıw|Sayt ashıw|Parol ornatıw
+Data Science (Maǵlıwmatlar ilimi) ne menen shuǵıllanadı?|Tek baǵdarlama dizaynı menen|Tek tarmaq kabelların ulaw menen|Maǵlıwmatlardı jıynaw, talqılaw hám juwmaq shıǵarıw menen|Printerlerdi remontlaw menen
+Machine Learning (Mashinanı oqıtıw) mánisi nede?|Baǵdarlama maǵlıwmatlardan úyrenip, qarar yamasa boljaw jasay aladı|Kompyuterdi qolda jıynaw|Tek tekst teriw|Internetti óshiriw
+Phishing degen ne?|Tarmaq tezligin ólshew usılı|Fayllardı qısıw baǵdarlaması|Antivirustıń bir túri|Jalǵan xat yamasa sayt arqalı parol hám maǵlıwmatlardı aldap alıw
+Akkauntı qorǵawdıń eń isenimli usılı qaysı?|Hámme jerde bir parol isletiw|Kúshli, ayrıqsha parol hám 2FA isletiw|Paroldi dosqa aytıp qoyıw|Parol qoymaw`},
+B:{n:25,ans:"BDACBDACBADCADBCABDCADCBA",uz:`Ona plataning vazifasi nima?|Tasvirni ekranga chiqarish|Kompyuterning asosiy qurilmalarini o’zaro bog’lash|Faqat ovozni ijro etish|Faqat ma’lumotni chop etish
+Quyidagilardan qaysi biri ma’lumotni doimiy saqlash qurilmasi hisoblanadi?|RAM|Monitor|Klaviatura|SSD
+Android qaysi turdagi tizim hisoblanadi?|Mobil operatsion tizim|Faqat noutbuklar uchun brauzer|Antivirus dasturi|Tarmoq protokoli
+1 MB necha KB ga teng (1024 hisobida)?|8|100|1024|10 000
+Oxirgi bajarilgan amalni bekor qilish uchun qaysi tugmalar ishlatiladi?|Ctrl+V|Ctrl+Z|Ctrl+X|F2
+Veb-kamera qaysi toifadagi qurilmaga kiradi?|Chiqarish qurilmasi|Saqlash qurilmasi|Ovoz chiqarish qurilmasi|Kiritish qurilmasi
+Quyidagilardan qaysi biri qidiruv tizimi hisoblanadi?|Google|Windows|Word|Paint
+Parol xavfsizligi bo’yicha qaysi maslahat to’g’ri?|Hamma joyda bir xil parol ishlatish|Parolni qog’ozga yozib, ochiq joyga qo’yish|Uzun, harf, raqam va belgilardan iborat parol tanlash|Tug’ilgan kunni parol qilish
+Spyware qanday xavf tug’diradi?|Faqat ekranni o’chiradi|Foydalanuvchi ma’lumotlarini yashirincha yig’adi|Kompyuterni tezlashtiradi|Antivirusni yangilaydi
+Noma’lum fleshkani kompyuterga ulaganda nima qilish kerak?|Avval antivirus bilan tekshirish|Ichidagi fayllarni darhol ochish|Tekshirmasdan barcha fayllarni nusxalash|Parolni fleshkaga yozib qo’yish
+Quyidagilardan qaysi biri "raqamli iz" qoldiradi?|Qog’ozga yozilgan xat|Internetsiz ishlaydigan kalkulyator|Xotirada saqlangan fikr|Ijtimoiy tarmoqdagi post, layk va qidiruvlar
+Axborot ishonchli ekanini tekshirishda nimaga e’tibor berish kerak?|Rangli rasm borligiga|Layklar soniga|Manba va muallifga, boshqa manbalar bilan solishtirishga|Sarlavhaning ta’sirchanligiga
+Quyidagilardan qaysi biri raqamli transformatsiyaga misol bo’ladi?|Onlayn to’lov va elektron hujjat aylanishi|Faqat qog’oz bilan ishlash|Arizani faqat shaxsan topshirish|Kitobni qo’lda ko’chirib yozish
+Brauzer manzil satrida https:// va qulf belgisi nimani bildiradi?|Sayt bepul ekanini|Sayt tez ishlashini|Saytda reklama yo’qligini|Aloqa shifrlangan, xavfsiz ekanini
+Hosting xizmati nima uchun kerak?|Parolni tiklash uchun|Sayt fayllarini serverda saqlab, internetda ko’rinadigan qilish uchun|Fayllarni arxivlash uchun|Antivirus o’rnatish uchun
+HTTP nima?|Dastur nomi|Parol turi|Brauzer va server o’rtasida ma’lumot almashish protokoli|Domen turi
+Quyidagilardan qaysi biri bulutli saqlash xizmati?|OneDrive|Paint|Notepad|Calculator
+Microsoft To Do va Google Tasks nima uchun ishlatiladi?|Video tahrirlash uchun|Vazifalar ro’yxatini yuritish va rejalashtirish uchun|Viruslarni topish uchun|Sayt yaratish uchun
+GitHub nima?|Antivirus dasturi|Matn muharriri|Brauzer|Git repozitoriylarini onlayn saqlash va hamkorlik qilish platformasi
+Git’da o’zgargan fayllar holatini ko’rsatuvchi buyruq qaysi?|git push|git clone|git status|git init
+git clone buyrug’i nima qiladi?|Mavjud repozitoriyni o’z kompyuteringizga ko’chirib oladi|Barcha commit’larni o’chiradi|Parol o’rnatadi|Yangi brauzer ochadi
+Quyidagilardan qaysi biri web dasturlashda ishlatiladigan texnologiyalar?|Photoshop|Excel|Paint|HTML, CSS va JavaScript
+Sun’iy intellekt (AI) nima?|Faqat robot|Internet turi|Mashinaning odamga xos aqliy vazifalarni bajara olish qobiliyati|Antivirus turi
+DevOps nimani birlashtiradi?|Dizayn va marketingni|Dasturlash (Dev) va server/infratuzilmani boshqarishni (Ops)|Faqat o’yinlarni|Tarmoq kabellarini
+Ijtimoiy muhandislik hujumi nima?|Insonlarni aldab, maxfiy ma’lumotni o’zlari berishga undash|Dasturdagi xato|Qurilmaning buzilishi|Internet uzilishi`,ru:`Какова функция материнской платы?|Вывод изображения на экран|Соединение между собой основных устройств компьютера|Только воспроизведение звука|Только печать данных
+Что из перечисленного является устройством постоянного хранения данных?|RAM|Монитор|Клавиатура|SSD
+К какому типу систем относится Android?|Мобильная операционная система|Браузер только для ноутбуков|Антивирусная программа|Сетевой протокол
+Сколько КБ в 1 МБ (при расчёте 1024)?|8|100|1024|10 000
+Какие клавиши используются для отмены последнего выполненного действия?|Ctrl+V|Ctrl+Z|Ctrl+X|F2
+К какой категории устройств относится веб-камера?|Устройство вывода|Устройство хранения|Устройство вывода звука|Устройство ввода
+Что из перечисленного является поисковой системой?|Google|Windows|Word|Paint
+Какой совет по безопасности пароля верен?|Использовать один и тот же пароль везде|Записать пароль на бумаге и положить на видное место|Выбирать длинный пароль из букв, цифр и символов|Сделать паролем дату рождения
+Какую опасность представляет spyware?|Только выключает экран|Тайно собирает данные пользователя|Ускоряет компьютер|Обновляет антивирус
+Что нужно сделать при подключении неизвестной флешки к компьютеру?|Сначала проверить антивирусом|Сразу открыть все файлы на ней|Скопировать все файлы без проверки|Записать пароль на флешку
+Что из перечисленного оставляет «цифровой след»?|Письмо, написанное на бумаге|Калькулятор, работающий без интернета|Мысль, хранящаяся в памяти|Пост, лайки и поисковые запросы в соцсетях
+На что нужно обращать внимание при проверке достоверности информации?|На наличие цветной картинки|На количество лайков|На источник и автора, сравнение с другими источниками|На эмоциональность заголовка
+Что из перечисленного является примером цифровой трансформации?|Онлайн-оплата и электронный документооборот|Работа только с бумагой|Подача заявления только лично|Ручное переписывание книги
+Что означают https:// и значок замка в адресной строке браузера?|Что сайт бесплатный|Что сайт работает быстро|Что на сайте нет рекламы|Что соединение зашифровано и безопасно
+Для чего нужна услуга хостинга?|Для восстановления пароля|Для хранения файлов сайта на сервере и доступа к нему в интернете|Для архивирования файлов|Для установки антивируса
+Что такое HTTP?|Название программы|Тип пароля|Протокол обмена данными между браузером и сервером|Тип домена
+Что из перечисленного является облачным хранилищем?|OneDrive|Paint|Notepad|Calculator
+Для чего используются Microsoft To Do и Google Tasks?|Для редактирования видео|Для ведения списка задач и планирования|Для поиска вирусов|Для создания сайтов
+Что такое GitHub?|Антивирусная программа|Текстовый редактор|Браузер|Платформа для онлайн-хранения Git-репозиториев и совместной работы
+Какая команда Git показывает состояние изменённых файлов?|git push|git clone|git status|git init
+Что делает команда git clone?|Копирует существующий репозиторий на ваш компьютер|Удаляет все коммиты|Устанавливает пароль|Открывает новый браузер
+Какие из перечисленных технологий используются в веб-программировании?|Photoshop|Excel|Paint|HTML, CSS и JavaScript
+Что такое искусственный интеллект (ИИ)?|Только робот|Тип интернета|Способность машины выполнять умственные задачи, свойственные человеку|Вид антивируса
+Что объединяет DevOps?|Дизайн и маркетинг|Разработку (Dev) и управление серверами/инфраструктурой (Ops)|Только игры|Сетевые кабели
+Что такое атака социальной инженерии?|Обман людей, чтобы они сами выдали конфиденциальную информацию|Ошибка в программе|Поломка устройства|Обрыв интернета`,kk:`Ana plataníń wazıypası nede?|Súwretti ekranǵa shıǵarıw|Kompyuterdiń tiykarǵı qurılmaların óz ara baylanıstırıw|Tek dawıstı esittiriw|Tek maǵlıwmattı shıǵarıw
+Tómendegilerdiń qaysısı maǵlıwmattı turaqlı saqlaw qurılması esaplanadı?|RAM|Monitor|Klaviatura|SSD
+Android qanday túrdegi sistema esaplanadı?|Mobil operatsion sistema|Tek noutbuklar ushın brauzer|Antivirus baǵdarlaması|Tarmaq protokolı
+1 MB neshe KB ǵa teń (1024 esabında)?|8|100|1024|10 000
+Sońǵı orınlanǵan ámeldi biykar etiw ushın qaysı túymeler isletiledi?|Ctrl+V|Ctrl+Z|Ctrl+X|F2
+Veb-kamera qanday kategoriyadaǵı qurılmaǵa kiredi?|Shıǵarıw qurılması|Saqlaw qurılması|Dawıs shıǵarıw qurılması|Kiritiw qurılması
+Tómendegilerdiń qaysısı izlew sisteması esaplanadı?|Google|Windows|Word|Paint
+Parol qáwipsizligi boyınsha qaysı másláhát durıs?|Hámme jerde birdey parol isletiw|Paroldi qaǵazǵa jazıp, ashıq jerge qoyıw|Uzın, háripler, sanlar hám belgilerden ibarat parol tańlaw|Tuwılǵan kúnin parol qılıw
+Spyware qanday qáwip tuwdıradı?|Tek ekranın óshiredi|Paydalanıwshı maǵlıwmatların jasırın jıynaydı|Kompyuterdi tezletedi|Antivirustı jańalaydı
+Belgisiz fleshkanı kompyuterge ulaǵanda ne islew kerek?|Aldın antivirus penen tekseriw|Ishindegi fayllardı derhal ashıw|Tekserilmesten barlıq fayllardı kóshiriw|Paroldi fleshkaǵa jazıp qoyıw
+Tómendegilerdiń qaysısı «sanlı iz» qaldıradı?|Qaǵazǵa jazılǵan xat|Internetsiz isleytuǵın kalkulyator|Yadta saqlanǵan pikir|Sociallıq tarmaqtaǵı post, layk hám izlewler
+Aqparat isenimli ekenin tekseriwde nege itibar beriw kerek?|Reńli suwret barlıǵına|Layklar sanına|Derek hám avtorǵa, basqa derekler menen salıstırıwǵa|Sarlawhanıń tásirsheńligine
+Tómendegilerdiń qaysısı sanlı transformatsiyaǵa mısal boladı?|Onlayn tólem hám elektron hújjet aylanısı|Tek qaǵaz menen islew|Arzanı tek shaxsan tapsırıw|Kitaptı qolda kóshirip jazıw
+Brauzer mánzil qatarındaǵı https:// hám qulıp belgisi neni bildiredi?|Saytıń biypul ekenin|Saytıń tez islewin|Saytta reklama joq ekenin|Baylanıs shifrlengen, qáwipsiz ekenin
+Hosting xızmeti ne ushın kerek?|Paroldi tiklew ushın|Sayt faylların serverde saqlap, internette kórinetuǵın etiw ushın|Fayllardı arxivlew ushın|Antivirus ornatıw ushın
+HTTP degen ne?|Baǵdarlama atı|Parol túri|Brauzer hám server arasında maǵlıwmat almasıw protokolı|Domen túri
+Tómendegilerdiń qaysısı bulttaǵı saqlaw xızmeti?|OneDrive|Paint|Notepad|Calculator
+Microsoft To Do hám Google Tasks ne ushın isletiledi?|Video redaktorlaw ushın|Tapsırmalar dizimin júrgiziw hám rejelestiriw ushın|Viruslardı tabıw ushın|Sayt jaratıw ushın
+GitHub degen ne?|Antivirus baǵdarlaması|Tekst redaktorı|Brauzer|Git repozitoriylerin onlayn saqlaw hám birgelikte islew platforması
+Git te ózgergen fayllar jaǵdayın kórsetiwshi buyrıq qaysı?|git push|git clone|git status|git init
+git clone buyrıǵı ne isleydi?|Bar repozitoriydi óz kompyuterińizge kóshirip aladı|Barlıq commit lerdi óshiredi|Parol ornatadı|Jańa brauzer ashadı
+Tómendegilerdiń qaysısı web baǵdarlawda isletiletuǵın texnologiyalar?|Photoshop|Excel|Paint|HTML, CSS hám JavaScript
+Jasalma intellekt (AI) degen ne?|Tek robot|Internet túri|Mashinanıń adamǵa tán aqıllıq wazıypalardı orınlaw qábileti|Antivirus túri
+DevOps neni birlestiredi?|Dizayn hám marketingti|Baǵdarlawdı (Dev) hám server/infrastrukturanı basqarıwdı (Ops)|Tek oyınlardı|Tarmaq kabelların
+Sociallıq injenerlik hújimi degen ne?|Adamlardı aldap, jasırın maǵlıwmattı ózleri beriwge úndew|Baǵdarlamadaǵı qate|Qurılmanıń buzılıwı|Internet úziliwi`},
+full:{n:30,ans:"BCAABBCDABCADBCADBCADBCADBACDA",uz:`Protsessorning tezligini ifodalovchi takt chastotasi qaysi birlikda o’lchanadi?|GB|GHz|dpi|Mbit/s
 Kompyuterning ishlash tamoyilida ma’lumotlar qaysi ketma-ketlikda ishlanadi?|Chiqarish → Kiritish → Qayta ishlash|Qayta ishlash → Chiqarish → Kiritish|Kiritish → Qayta ishlash → Chiqarish|Saqlash → Chiqarish → Kiritish
 Ishlayotgan dasturning joriy ma’lumotlari vaqtincha qaysi qurilmada saqlanadi?|Tezkor xotira (RAM)|HDD|Monitor|Skaner
 Quyidagilardan qaysi biri operatsion tizim hisoblanmaydi?|Google Chrome|Linux|macOS|iOS
@@ -63,8 +210,7 @@ DNS ning vazifasi nima?|Viruslarni aniqlash|Domen nomini IP-manzilga aylantirish
 Hosting nima?|Veb-sayt fayllari saqlanadigan serverda joy ajratish xizmati|Brauzer turi|Antivirus dasturi|Elektron pochta xizmati
 HTTPS protokoli HTTP dan nimasi bilan farq qiladi?|Faqat rasmlarni ochadi|Internetsiz ishlaydi|Ma’lumotlarni shifrlab, xavfsiz uzatadi|Faqat pochta uchun ishlatiladi
 Bulutdagi hujjatni boshqalar faqat ko’ra olishi, o’zgartira olmasligi uchun qaysi ruxsat beriladi?|Egasi (Owner)|Tahrirlovchi (Editor)|Ruxsat berilmaydi|Ko’ruvchi (Viewer)
-Google Docs kabi onlayn hujjatlarning asosiy afzalligi nima?|Bir nechta foydalanuvchi bir vaqtning o’zida birgalikda tahrirlay oladi|Faqat internetsiz ishlaydi|Faqat bitta foydalanuvchi ishlata oladi|Faqat rasm yaratish uchun mo’ljallangan`,
-ru:`В каких единицах измеряется тактовая частота, определяющая скорость процессора?|ГБ|ГГц|dpi|Мбит/с
+Google Docs kabi onlayn hujjatlarning asosiy afzalligi nima?|Bir nechta foydalanuvchi bir vaqtning o’zida birgalikda tahrirlay oladi|Faqat internetsiz ishlaydi|Faqat bitta foydalanuvchi ishlata oladi|Faqat rasm yaratish uchun mo’ljallangan`,ru:`В каких единицах измеряется тактовая частота, определяющая скорость процессора?|ГБ|ГГц|dpi|Мбит/с
 В какой последовательности обрабатываются данные по принципу работы компьютера?|Вывод → Ввод → Обработка|Обработка → Вывод → Ввод|Ввод → Обработка → Вывод|Хранение → Вывод → Ввод
 В каком устройстве временно хранятся текущие данные работающей программы?|Оперативная память (RAM)|HDD|Монитор|Сканер
 Что из перечисленного не является операционной системой?|Google Chrome|Linux|macOS|iOS
@@ -93,8 +239,7 @@ ru:`В каких единицах измеряется тактовая час�
 Что такое хостинг?|Услуга предоставления места на сервере, где хранятся файлы сайта|Тип браузера|Антивирусная программа|Служба электронной почты
 Чем протокол HTTPS отличается от HTTP?|Открывает только изображения|Работает без интернета|Шифрует данные и передаёт их безопасно|Используется только для почты
 Какое разрешение нужно дать, чтобы другие могли только просматривать документ в облаке, но не изменять его?|Владелец (Owner)|Редактор (Editor)|Доступ не предоставляется|Читатель (Viewer)
-Каково главное преимущество онлайн-документов, таких как Google Docs?|Несколько пользователей могут редактировать одновременно|Работает только без интернета|Работать может только один пользователь|Предназначен только для создания изображений`,
-kk:`Processordıń tezligin ańlatatuǵın taktlik chastota qanday birlikte ólshenedi?|GB|GHz|dpi|Mbit/s
+Каково главное преимущество онлайн-документов, таких как Google Docs?|Несколько пользователей могут редактировать одновременно|Работает только без интернета|Работать может только один пользователь|Предназначен только для создания изображений`,kk:`Processordıń tezligin ańlatatuǵın taktlik chastota qanday birlikte ólshenedi?|GB|GHz|dpi|Mbit/s
 Kompyuterdiń islew principinde maǵlıwmatlar qanday izbe-izlikte islenedi?|Shıǵarıw → Kiritiw → Qayta islew|Qayta islew → Shıǵarıw → Kiritiw|Kiritiw → Qayta islew → Shıǵarıw|Saqlaw → Shıǵarıw → Kiritiw
 Islep atırǵan baǵdarlamanıń házirgi maǵlıwmatları waqtınsha qaysı qurılmada saqlanadı?|Operativ yad (RAM)|HDD|Monitor|Skaner
 Tómendegilerdiń qaysısı operatsion sistema esaplanbaydı?|Google Chrome|Linux|macOS|iOS
@@ -123,44 +268,53 @@ DNS tiń wazıypası nede?|Viruslardı anıqlaw|Domen atın IP-mánzilge ayland�
 Hosting degen ne?|Veb-sayt fayllari saqlanatuǵın serverde orın ajıratıw xızmeti|Brauzer túri|Antivirus baǵdarlaması|Elektron pochta xızmeti
 HTTPS protokolı HTTP dan nesi menen parıq qıladı?|Tek suwretlerdi ashadı|Internetsiz isleydi|Maǵlıwmatlardı shifrlap, qáwipsiz uzatadı|Tek pochta ushın isletiledi
 Bulttaǵı hújjetti basqalar tek kóre alıwı, ózgerte almawı ushın qaysı ruxsat beriledi?|Iyesi (Owner)|Redaktorlawshı (Editor)|Ruxsat berilmeydi|Kóriwshi (Viewer)
-Google Docs sıyaqlı onlayn hújjetlerdiń tiykarǵı artıqmashılıǵı nede?|Bir neshe paydalanıwshı bir waqıtta birgelikte redaktorlay aladı|Tek internetsiz isleydi|Tek bir paydalanıwshı isley aladı|Tek suwret jaratıw ushın mólsherlengen`};
-const D={};for(const k in RAW)D[k]=RAW[k].split("\n").map(l=>l.split("|"));
+Google Docs sıyaqlı onlayn hújjetlerdiń tiykarǵı artıqmashılıǵı nede?|Bir neshe paydalanıwshı bir waqıtta birgelikte redaktorlay aladı|Tek internetsiz isleydi|Tek bir paydalanıwshı isley aladı|Tek suwret jaratıw ushın mólsherlengen`}};
 const L={
 uz:{n:"Ism va familiya",c:"Sinf",st:"Testni boshlash",inf:"30 ta savol · 20 daqiqa. Har bir javobdan so’ng to’g’ri javob ko’rsatiladi.",need:"Ism va sinfni kiriting",q:"Savol",nx:"Keyingi",fn:"Yakunlash",ok:"To’g’ri!",bad:"Noto’g’ri. To’g’ri javob:",res:"Natija",sc:"Ball",pc:"Foiz",tm:"Vaqt",rv:"Xatolar tahlili",none:"Xato yo’q — a’lo natija!",ag:"Qayta topshirish",cp:"Natijani nusxalash",cd:"Nusxalandi",sv:"Natija o’qituvchiga saqlandi",ns:"Natija saqlanmadi — ballingizni o’qituvchiga ko’rsating",tu:"Vaqt tugadi!",ya:"Sizning javobingiz:",ca:"To’g’ri javob:",ad:"Admin",lgn:"Login",pw:"Parol",en:"Kirish",wr:"Login yoki parol noto’g’ri",np:"Natijalarni ko’rish uchun claude.ai da admin hisobingiz bilan kiring",bk:"Orqaga",em:"Hali natijalar yo’q",dt:"Sana",lg:"Til",rf:"Yangilash",cs:"CSV yuklab olish",dn:"Javob berilmagan"},
 ru:{n:"Фамилия и имя",c:"Класс",st:"Начать тест",inf:"30 вопросов · 20 минут. После каждого ответа показывается правильный вариант.",need:"Введите имя и класс",q:"Вопрос",nx:"Далее",fn:"Завершить",ok:"Верно!",bad:"Неверно. Правильный ответ:",res:"Результат",sc:"Баллы",pc:"Процент",tm:"Время",rv:"Разбор ошибок",none:"Ошибок нет — отличный результат!",ag:"Пройти заново",cp:"Скопировать результат",cd:"Скопировано",sv:"Результат сохранён для учителя",ns:"Результат не сохранён — покажите баллы учителю",tu:"Время вышло!",ya:"Ваш ответ:",ca:"Правильный ответ:",ad:"Админ",lgn:"Логин",pw:"Пароль",en:"Войти",wr:"Неверный логин или пароль",np:"Чтобы видеть результаты, войдите в claude.ai под аккаунтом администратора",bk:"Назад",em:"Результатов пока нет",dt:"Дата",lg:"Язык",rf:"Обновить",cs:"Скачать CSV",dn:"Нет ответа"},
 kk:{n:"Atı-jóni",c:"Klass",st:"Testti baslaw",inf:"30 soraw · 20 minut. Hár bir juwaptan soń durıs juwap kórsetiledi.",need:"Atı-jóni hám klassıńızdı kiritiń",q:"Soraw",nx:"Keyingi",fn:"Juwmaqlaw",ok:"Durıs!",bad:"Qate. Durıs juwap:",res:"Nátiyje",sc:"Ball",pc:"Procent",tm:"Waqıt",rv:"Qatelerdi talqılaw",none:"Qate joq — ájayıp nátiyje!",ag:"Qaytadan tapsırıw",cp:"Nátiyjeni kóshiriw",cd:"Kóshirildi",sv:"Nátiyje oqıtıwshıǵa saqlandı",ns:"Nátiyje saqlanbadı — balıńızdı oqıtıwshıǵa kórsetiń",tu:"Waqıt tamamlandı!",ya:"Sizdiń juwabıńız:",ca:"Durıs juwap:",ad:"Admin",lgn:"Login",pw:"Parol",en:"Kiriw",wr:"Login yamasa parol qate",np:"Nátiyjelerdi kóriw ushın claude.ai ta admin akkauntıńız benen kiriń",bk:"Artqa",em:"Házirshe nátiyjeler joq",dt:"Sáne",lg:"Til",rf:"Jańalaw",cs:"CSV júklep alıw",dn:"Juwap berilmegen"}};
-const S={lang:"uz",scr:"start",name:"",cls:"",i:0,a:Array(30).fill(-1),t0:0,spent:0,saved:null,admin:false,rows:[]};
-let timer=null,db=null,uid=null,user=null;
+const LX={
+uz:{inf:"{n} ta savol · 20 daqiqa. Savollar har bir o’quvchi uchun aralashtirib beriladi. Har bir javobdan so’ng to’g’ri javob ko’rsatiladi.",va:"A variant",vb:"B variant",vf:"Umumiy test (30 ta)",tt:"Test"},
+ru:{inf:"{n} вопросов · 20 минут. Вопросы перемешиваются для каждого ученика. После каждого ответа показывается правильный вариант.",va:"Вариант A",vb:"Вариант B",vf:"Общий тест (30)",tt:"Тест"},
+kk:{inf:"{n} soraw · 20 minut. Sorawlar hár bir oqıwshı ushın aralastırıp beriledi. Hár bir juwaptan soń durıs juwap kórsetiledi.",va:"A variant",vb:"B variant",vf:"Uliwma test (30 soraw)",tt:"Test"}};
+for(const l in LX)Object.assign(L[l],LX[l]);
+const D={};for(const k in T){D[k]={};for(const l of["uz","ru","kk"])D[k][l]=T[k][l].split("\n").map(x=>x.split("|"))}
+const S={lang:"uz",scr:"start",test:"A",name:"",cls:"",ord:[],p:0,a:[],t0:0,spent:0,saved:null,cred:null,rows:[],to:false};
+let timer=null;
 const $=id=>document.getElementById(id),t=k=>L[S.lang][k],esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const AB="ABCD",left=()=>Math.max(0,MIN*60-Math.floor((Date.now()-S.t0)/1000)),fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
-const score=()=>S.a.reduce((n,v,i)=>n+(v===ANS.charCodeAt(i)-65?1:0),0);
-function langBar(){$("lg").innerHTML=["uz","ru","kk"].map(l=>`<button class="${S.lang===l?"on":""}" data-l="${l}">${{uz:"O’zb",ru:"Рус",kk:"Qar"}[l]}</button>`).join("");document.documentElement.lang=S.lang==="kk"?"kk":S.lang;}
-$("lg").onclick=e=>{const l=e.target.dataset.l;if(l){keep();S.lang=l;langBar();draw();}};
-function keep(){const n=$("nm"),c=$("cl");if(n)S.name=n.value;if(c)S.cls=c.value;}
+const AB="ABCD",N=()=>T[S.test].n,KEY=i=>T[S.test].ans.charCodeAt(i)-65;
+const left=()=>Math.max(0,MIN*60-Math.floor((Date.now()-S.t0)/1000)),fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const score=()=>S.a.reduce((n,v,i)=>n+(v===KEY(i)?1:0),0);
+const shuffle=n=>{const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const tn=k=>k==="full"?t("vf"):k==="A"?t("va"):t("vb");
+function langBar(){$("lg").innerHTML=["uz","ru","kk"].map(l=>`<button class="${S.lang===l?"on":""}" data-l="${l}">${{uz:"O’zb",ru:"Рус",kk:"Qar"}[l]}</button>`).join("");document.documentElement.lang=S.lang==="kk"?"kk":S.lang}
+$("lg").onclick=e=>{const l=e.target.dataset.l;if(l){keep();S.lang=l;langBar();draw()}};
+function keep(){const n=$("nm"),c=$("cl");if(n)S.name=n.value;if(c)S.cls=c.value}
 function draw(){const a=$("app");
-if(S.scr==="start"){a.innerHTML=`<div class="card"><h1>Computer Science Foundation</h1><p>${t("inf")}</p><label>${t("n")}</label><input id="nm" value="${esc(S.name)}" maxlength="60"><label>${t("c")}</label><input id="cl" value="${esc(S.cls)}" maxlength="20"><div id="er" class="fb no" hidden>${t("need")}</div><button class="btn" id="go">${t("st")}</button> <button class="btn s" id="ad">${t("ad")}</button></div>`;
-$("go").onclick=()=>{keep();if(!S.name.trim()||!S.cls.trim()){$("er").hidden=false;return}S.scr="test";S.t0=Date.now();S.i=0;S.a=Array(30).fill(-1);timer=setInterval(tick,1000);draw()};
-$("ad").onclick=async()=>{keep();S.scr=(S.cred&&await load())?"admin":"login";draw()};}
+if(S.scr==="start"){a.innerHTML=`<div class="card"><h1>Computer Science Foundation</h1><div class="seg">${["A","B","full"].map(k=>`<button class="btn s${S.test===k?" on":""}" data-t="${k}">${tn(k)}</button>`).join("")}</div><p>${t("inf").replace("{n}",N())}</p><label>${t("n")}</label><input id="nm" value="${esc(S.name)}" maxlength="60"><label>${t("c")}</label><input id="cl" value="${esc(S.cls)}" maxlength="20"><div id="er" class="fb no" hidden>${t("need")}</div><button class="btn" id="go">${t("st")}</button> <button class="btn s" id="ad">${t("ad")}</button></div>`;
+a.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{keep();S.test=b.dataset.t;draw()});
+$("go").onclick=()=>{keep();if(!S.name.trim()||!S.cls.trim()){$("er").hidden=false;return}S.ord=shuffle(N());S.a=Array(N()).fill(-1);S.p=0;S.to=false;S.scr="test";S.t0=Date.now();timer=setInterval(tick,1000);draw()};
+$("ad").onclick=async()=>{keep();S.scr=(S.cred&&await load())?"admin":"login";draw()}}
+else if(S.scr==="test"){const p=S.p,i=S.ord[p],q=D[S.test][S.lang][i],ch=S.a[i],ci=KEY(i),n=N();
+a.innerHTML=`<div class="card"><div class="meta"><span>${t("q")} ${p+1}/${n}</span><span class="tm" id="tm">⏱ ${fmt(left())}</span></div><div class="bar"><i style="width:${p/n*100}%"></i></div><div class="q">${esc(q[0])}</div>${[1,2,3,4].map(j=>`<button class="o ${ch>=0?(j-1===ci?"ok":j-1===ch?"no":""):""}" data-j="${j-1}" ${ch>=0?"disabled":""}><b>${AB[j-1]}</b><span>${esc(q[j])}</span></button>`).join("")}${ch>=0?(ch===ci?`<div class="fb ok">✓ ${t("ok")}</div>`:`<div class="fb no">✗ ${t("bad")} ${AB[ci]}) ${esc(q[ci+1])}</div>`)+`<button class="btn" id="nx">${p<n-1?t("nx")+" →":t("fn")}</button>`:""}</div>`;
+a.querySelectorAll(".o").forEach(b=>b.onclick=()=>{S.a[i]=+b.dataset.j;draw()});
+if($("nx"))$("nx").onclick=()=>{p<n-1?(S.p++,draw()):finish()}}
 else if(S.scr==="login"){a.innerHTML=`<div class="card"><h2>${t("ad")}</h2><label>${t("lgn")}</label><input id="lu" autocomplete="username"><label>${t("pw")}</label><input id="lp" type="password" autocomplete="current-password"><div id="le" class="fb no" hidden>${t("wr")}</div><button class="btn" id="lb">${t("en")}</button> <button class="btn s" id="lk">${t("bk")}</button></div>`;
 $("lk").onclick=()=>{S.scr="start";draw()};$("lb").onclick=async()=>{S.cred={login:$("lu").value.trim(),password:$("lp").value};if(await load()){S.scr="admin";draw()}else{S.cred=null;$("le").hidden=false}}}
-else if(S.scr==="test"){const i=S.i,q=D[S.lang][i],ch=S.a[i],ci=ANS.charCodeAt(i)-65;
-a.innerHTML=`<div class="card"><div class="meta"><span>${t("q")} ${i+1}/30</span><span class="tm" id="tm">⏱ ${fmt(left())}</span></div><div class="bar"><i style="width:${i/30*100}%"></i></div><div class="q">${esc(q[0])}</div>${[1,2,3,4].map(j=>`<button class="o ${ch>=0?(j-1===ci?"ok":j-1===ch?"no":""):""}" data-j="${j-1}" ${ch>=0?"disabled":""}><b>${AB[j-1]}</b><span>${esc(q[j])}</span></button>`).join("")}${ch>=0?(ch===ci?`<div class="fb ok">✓ ${t("ok")}</div>`:`<div class="fb no">✗ ${t("bad")} ${AB[ci]}) ${esc(q[ci+1])}</div>`)+`<button class="btn" id="nx">${i<29?t("nx")+" →":t("fn")}</button>`:""}</div>`;
-a.querySelectorAll(".o").forEach(b=>b.onclick=()=>{S.a[i]=+b.dataset.j;draw()});
-if($("nx"))$("nx").onclick=()=>{i<29?(S.i++,draw()):finish()};}
-else if(S.scr==="result")result();else admin();}
+else if(S.scr==="result")result();else admin()}
 function tick(){const l=left(),e=$("tm");if(e){e.textContent="⏱ "+fmt(l);e.classList.toggle("lo",l<60)}if(l<=0)finish(true)}
 async function finish(to){clearInterval(timer);S.spent=Math.min(MIN*60,Math.floor((Date.now()-S.t0)/1000));S.to=!!to;S.scr="result";S.saved=null;draw();
-const r={name:S.name.trim(),cls:S.cls.trim(),score:score(),total:30,pct:Math.round(score()/30*100),spent:S.spent,lang:S.lang,ts:Date.now(),answers:S.a.map(v=>v<0?"-":AB[v]).join("")};
-S.saved=false;for(let k=0;k<3&&!S.saved;k++){try{const x=await fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(r)});S.saved=x.ok}catch(e){await new Promise(z=>setTimeout(z,1500))}}
-if(S.scr==="result")draw()}
-function result(){const sc=score(),p=Math.round(sc/30*100),w=[];S.a.forEach((v,i)=>{if(v!==ANS.charCodeAt(i)-65)w.push(i)});
-$("app").innerHTML=`<div class="card"><h2>${t("res")}${S.to?" — "+t("tu"):""}</h2><div class="big">${sc}/30</div><div class="grid"><div><b>${p}%</b>${t("pc")}</div><div><b>${fmt(S.spent)}</b>${t("tm")}</div><div><b>${esc(S.cls)}</b>${esc(S.name)}</div></div>${S.saved===null?"":`<div class="fb ${S.saved?"ok":"no"}">${S.saved?t("sv"):t("ns")}</div>`}<button class="btn" id="ag">${t("ag")}</button> <button class="btn s" id="cp">${t("cp")}</button></div><div class="card"><h2>${t("rv")}</h2>${w.length?w.map(i=>{const q=D[S.lang][i],ci=ANS.charCodeAt(i)-65,v=S.a[i];return`<div class="rv"><b>${i+1}. ${esc(q[0])}</b><div class="a">✗ ${t("ya")} ${v<0?t("dn"):AB[v]+") "+esc(q[v+1])}</div><div class="c">✓ ${t("ca")} ${AB[ci]}) ${esc(q[ci+1])}</div></div>`}).join(""):`<p>${t("none")}</p>`}</div>`;
+const r={test:S.test,name:S.name.trim(),cls:S.cls.trim(),spent:S.spent,lang:S.lang,answers:S.a.map(v=>v<0?"-":AB[v]).join("")};
+let ok=false;for(let k=0;k<3&&!ok;k++){try{const x=await fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(r)});ok=x.ok}catch(e){await new Promise(z=>setTimeout(z,1500))}}
+S.saved=ok;if(S.scr==="result")draw()}
+function result(){const n=N(),sc=score(),p=Math.round(sc/n*100),w=S.ord.filter(i=>S.a[i]!==KEY(i));
+$("app").innerHTML=`<div class="card"><h2>${t("res")}${S.to?" — "+t("tu"):""}</h2><div class="big">${sc}/${n}</div><div class="grid"><div><b>${p}%</b>${t("pc")}</div><div><b>${fmt(S.spent)}</b>${t("tm")}</div><div><b>${esc(S.cls)}</b>${esc(S.name)}</div></div>${S.saved===null?"":`<div class="fb ${S.saved?"ok":"no"}">${S.saved?t("sv"):t("ns")}</div>`}<button class="btn" id="ag">${t("ag")}</button> <button class="btn s" id="cp">${t("cp")}</button></div><div class="card"><h2>${t("rv")}</h2>${w.length?w.map(i=>{const q=D[S.test][S.lang][i],ci=KEY(i),v=S.a[i];return`<div class="rv"><b>${S.ord.indexOf(i)+1}. ${esc(q[0])}</b><div class="a">✗ ${t("ya")} ${v<0?t("dn"):AB[v]+") "+esc(q[v+1])}</div><div class="c">✓ ${t("ca")} ${AB[ci]}) ${esc(q[ci+1])}</div></div>`}).join(""):`<p>${t("none")}</p>`}</div>`;
 $("ag").onclick=()=>{S.scr="start";draw()};
-$("cp").onclick=async()=>{const x=`${S.name} | ${S.cls} | ${sc}/30 (${p}%) | ${fmt(S.spent)}`;try{await navigator.clipboard.writeText(x)}catch(e){}$("cp").textContent=t("cd")}}
+$("cp").onclick=async()=>{const x=`${tn(S.test)} | ${S.name} | ${S.cls} | ${sc}/${n} (${p}%) | ${fmt(S.spent)}`;try{await navigator.clipboard.writeText(x)}catch(e){}$("cp").textContent=t("cd")}}
 async function load(){try{const x=await fetch("/api/admin",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(S.cred)});if(!x.ok)return false;S.rows=(await x.json()).rows.sort((a,b)=>b.ts-a.ts);return true}catch(e){return false}}
-function admin(){const r=S.rows;$("app").innerHTML=`<div class="card"><h2>${t("ad")} (${r.length})</h2><button class="btn s" id="bk" style="margin:0">${t("bk")}</button> <button class="btn s" id="rf" style="margin:0">${t("rf")}</button> <button class="btn s" id="cs" style="margin:0">${t("cs")}</button>${S.np?`<div class="fb no" style="margin-top:12px">${t("np")}</div>`:""}<div class="sc" style="margin-top:12px">${r.length?`<table><tr><th>#</th><th>${t("n")}</th><th>${t("c")}</th><th>${t("sc")}</th><th>%</th><th>${t("tm")}</th><th>${t("lg")}</th><th>${t("dt")}</th></tr>${r.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.name)}</td><td>${esc(x.cls)}</td><td>${x.score}/${x.total}</td><td>${x.pct}%</td><td>${fmt(x.spent)}</td><td>${esc(x.lang)}</td><td>${new Date(x.ts).toLocaleString()}</td></tr>`).join("")}</table>`:`<p>${t("em")}</p>`}</div></div>`;
+const tl=k=>k==="A"||k==="B"?k:"30";
+function admin(){const r=S.rows;$("app").innerHTML=`<div class="card"><h2>${t("ad")} (${r.length})</h2><button class="btn s" id="bk" style="margin:0">${t("bk")}</button> <button class="btn s" id="rf" style="margin:0">${t("rf")}</button> <button class="btn s" id="cs" style="margin:0">${t("cs")}</button><div class="sc" style="margin-top:12px">${r.length?`<table><tr><th>#</th><th>${t("n")}</th><th>${t("c")}</th><th>${t("tt")}</th><th>${t("sc")}</th><th>%</th><th>${t("tm")}</th><th>${t("lg")}</th><th>${t("dt")}</th></tr>${r.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.name)}</td><td>${esc(x.cls)}</td><td>${tl(x.test)}</td><td>${x.score}/${x.total}</td><td>${x.pct}%</td><td>${fmt(x.spent)}</td><td>${esc(x.lang)}</td><td>${new Date(x.ts).toLocaleString()}</td></tr>`).join("")}</table>`:`<p>${t("em")}</p>`}</div></div>`;
 $("bk").onclick=()=>{S.scr="start";draw()};$("rf").onclick=async()=>{await load();draw()};
-$("cs").onclick=async()=>{const c="\ufeffname,class,score,percent,seconds,lang,date,answers\n"+r.map(x=>[x.name,x.cls,x.score,x.pct,x.spent,x.lang,new Date(x.ts).toISOString(),x.answers].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");const u=URL.createObjectURL(new Blob([c],{type:"text/csv"})),l=document.createElement("a");l.href=u;l.download="results.csv";l.click();URL.revokeObjectURL(u)}}
+$("cs").onclick=()=>{const c="\ufeffname,class,test,score,percent,seconds,lang,date,answers\n"+r.map(x=>[x.name,x.cls,tl(x.test),x.score,x.pct,x.spent,x.lang,new Date(x.ts).toISOString(),x.answers].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");const u=URL.createObjectURL(new Blob([c],{type:"text/csv"})),l=document.createElement("a");l.href=u;l.download="results.csv";l.click();URL.revokeObjectURL(u)}}
 langBar();draw();
-
 </script></body></html>
